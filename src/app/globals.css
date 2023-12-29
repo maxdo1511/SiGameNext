@@ -3,25 +3,43 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --primary-color: #1c1c1c;
+  --primary-color-70: rgba(28, 28, 28, 0.7);
+  --primary-color-10: rgba(28, 28, 28, 0.1);
+  --background-color: #e8e8e8;
+  --background-color-80: rgba(210, 210, 210, 0.8);
+  --background-color-20: rgba(210, 210, 210, 0.2);
+  --border-color: rgba(79, 79, 79, 0.7);
+  --text-color-default: #000000;
+  --text-color-default-80: rgba(0, 0, 0, 0.8);
+  --text-color-default-30: rgba(0, 0, 0, 0.3);
+  --text-color-primary: #1400ff;
+  --text-color-reverse: #f3f3f3;
+  --button-color-primary: #3659f8;
+  --button-color-primary-dark: #0048ff;
+
+
+  --hue: 223;
+  --bg: hsl(var(--hue),10%,90%);
+  --fg: hsl(var(--hue),10%,10%);
+  --primary: hsl(var(--hue),90%,55%);
+  --primary-l: hsl(var(--hue),90%,65%);
+  --primary-d: hsl(var(--hue),90%,45%);
+  --white: hsl(var(--hue),10%,100%);
+  --white-d: hsl(var(--hue),10%,45%);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+root:has(.dark) {
+
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+html, body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.content__padding {
+  padding-top: 100px;
 }
