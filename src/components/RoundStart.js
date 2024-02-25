@@ -26,7 +26,7 @@ export default function RoundStart({session, SetStage}) {
                 round != null &&
                 <div className={"absolute w-1/2 h-2/3 flex flex-col items-end justify-end"}>
                     <div className={"pb-10"}>
-                        <h1 className={"text-3xl font-bold"}>{round.name}</h1>
+                        <h1 className={"text-3xl font-bold w-full text-center"}>{round.name}</h1>
                         <br/>
                         <TeamsComponent items={round.themes} />
                     </div>

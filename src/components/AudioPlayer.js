@@ -44,7 +44,7 @@ const AudioPlayer = () => {
                     SetHidden(false)
                 }}/>
             </button>
-            <div className={"absolute"} hidden={!hidden}>
+            <div className={"absolute z-10"} hidden={!hidden}>
                 <Image src={down} alt={"down icon"} width={20} height={20} className={"ml-5"} onClick={() => {
                     setTimeout(() => {
                         SetHidden(false)
