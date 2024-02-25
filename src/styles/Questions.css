@@ -1,0 +1,25 @@
+.questions__container {
+    animation: open__animation 1s forwards ease-in;
+}
+
+.round__title {
+    animation: title__animation 500ms forwards ease-in;
+}
+
+@keyframes title__animation {
+    0% {
+        letter-spacing: 200px;
+    }
+    100% {
+        letter-spacing: 1px;
+    }
+}
+
+@keyframes open__animation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

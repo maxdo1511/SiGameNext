@@ -9,6 +9,8 @@ import RoundStart from "@/components/RoundStart";
 import Questions from "@/components/Questions";
 import Question from "@/components/Question";
 import Answer from "@/components/Answer";
+import treeImage from "../../../public/tree.png"
+import End from "@/components/End";
 
 
 export default function Home() {
@@ -79,16 +81,13 @@ export default function Home() {
         )
     }, [])
 
-    console.log(stage)
-    console.log(data)
-
     const selectScreen = () => {
         switch(stage) {
             case 'GAME_SELECTION':
                 return (
                     data != null &&
                     data.map((game) => (
-                        <div key={game.id}>
+                        <div className={"p-5"} key={game.id}>
                             <Game game={game} selector={SetStage} uuid={localStorage.getItem("session_uuid")}/>
                         </div>
                     ))
@@ -101,7 +100,7 @@ export default function Home() {
             case 'ROUND_START':
                 return (
                     session != null &&
-                        <RoundStart round={session} SetStage={SetStage} />
+                        <RoundStart session={session} SetStage={SetStage} />
                 )
             case "QUESTION_SELECTION":
                 return (
@@ -118,11 +117,28 @@ export default function Home() {
                     session != null &&
                         <Answer session={session} SetStage={SetStage} />
                 )
+            case "RESULT":
+                return (
+                    session != null &&
+                        <End session={session} SetStage={SetStage} />
+                )
         }
     }
 
+    const RenderImage = () => {
+        return (
+            <Image
+                src={treeImage}
+                alt={"tree image"}
+                width={200}
+                height={600}
+                className={"absolute ml-10 mt-3"}
+            />
+        )
+    }
+
     return (
-        <div className={"container h-full bg-gray-400"}>
+        <div className={"container h-full bg-pink-200 rounded-b-2xl"}>
             {
                 selectScreen()
             }

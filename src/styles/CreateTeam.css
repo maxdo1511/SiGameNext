@@ -1,0 +1,12 @@
+.members__input {
+    animation: show__animation 500ms forwards ease-in;
+}
+
+@keyframes show__animation {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}

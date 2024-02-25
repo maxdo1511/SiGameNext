@@ -11,8 +11,11 @@ const config = {
     "get_current_team": "http://127.0.0.1:8080/api/session/getAnsTeam/",
     "question_answered": "http://127.0.0.1:8080/api/session/question/answer/",
     "question_result": "http://127.0.0.1:8080/api/session/question/result",
+    "get_winner": "http://127.0.0.1:8080/api/session/get/winner/",
+    "get_audio": "http://127.0.0.1:8080/api/audio/get/sound/",
+    "get_music": "http://127.0.0.1:8080/api/audio/get/music",
 
-    "question_image": "http://localhost:8080/api/images/get/",
+    "question_image": "http://127.0.0.1:8080/api/images/get/",
 
     "desktop_nav_max": 800,
 }

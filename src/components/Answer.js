@@ -5,7 +5,7 @@ export default function Answer({session, SetStage}) {
 
     const [updateSession, SetSession] = useState()
 
-    function handle(isTrue) {
+    function request(isTrue) {
         fetch(config.question_result, {
             method: "POST",
             body: JSON.stringify(
@@ -23,6 +23,13 @@ export default function Answer({session, SetStage}) {
                 SetStage("QUESTION_SELECTION")
             }
         })
+    }
+
+    function handle(isTure) {
+        request(isTure)
+        setTimeout(() => {
+            SetStage("QUESTION_SELECTION")
+        }, 1000)
     }
 
     useEffect(() => {
@@ -53,10 +60,10 @@ export default function Answer({session, SetStage}) {
                     }
                     <br/>
                     <div className={"flex flex-row gap-5"}>
-                        <button onClick={() => handle(true)} className={"p-2 rounded-2xl bg-green-700 w-40"}>
+                        <button onClick={() => handle(true)} className={"p-2 rounded-2xl focus:animate-ping bg-green-300 w-40"}>
                             Верно
                         </button>
-                        <button onClick={() => handle(false)} className={"p-2 rounded-2xl bg-red-700 w-40"}>
+                        <button onClick={() => handle(false)} className={"p-2 rounded-2xl focus:animate-ping bg-red-300 w-40"}>
                             Неверно
                         </button>
                     </div>
